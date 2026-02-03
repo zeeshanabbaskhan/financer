@@ -29,8 +29,8 @@ export default function Sidebar() {
     const [collapsed, setCollapsed] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
 
-    // Hide sidebar on admin pages and if not authenticated
-    if (!isAuthenticated || pathname?.startsWith('/admin')) return null;
+    // Hide sidebar on admin pages, landing page, and if not authenticated
+    if (!isAuthenticated || pathname?.startsWith('/admin') || pathname === '/') return null;
 
     const navItems = [
         { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -65,7 +65,7 @@ export default function Sidebar() {
             {/* Sidebar */}
             <aside
                 className={`
-                    fixed lg:static
+                    fixed lg:sticky
                     left-0 top-0 
                     h-screen 
                     z-40 lg:z-auto
