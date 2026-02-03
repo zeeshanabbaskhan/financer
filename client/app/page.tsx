@@ -57,7 +57,7 @@ export default function Home() {
             Money management that actually works
           </h1>
           <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
-            Track your spending, split bills with friends, and hit your savings goals. 
+            Track your spending, split bills with friends, and hit your savings goals.
             No spreadsheets. No complexity. Just smart finance management.
           </p>
           <div className="flex flex-wrap gap-4">
