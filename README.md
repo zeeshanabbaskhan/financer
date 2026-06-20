@@ -21,7 +21,7 @@
 
 **Deployed Website  :** https://financerzeeshanabbas-512be7f5802e.herokuapp.com/
 
-## 📖 Table of Contents
+## 📖 Table of Content
 
 - [About](#-about)
 - [Features](#-features)
