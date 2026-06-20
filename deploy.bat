@@ -19,8 +19,18 @@ if errorlevel 1 (
 echo ✅ Frontend built successfully!
 echo.
 
-REM Step 2: Install Backend Dependencies
-echo 📦 Step 2/3: Installing backend dependencies...
+REM Step 2: Copy build into server/public
+echo 📦 Step 2/4: Copying frontend into server/public...
+node ..\scripts\copy-client-build.js
+if errorlevel 1 (
+    echo ❌ Failed to copy frontend build!
+    exit /b 1
+)
+echo ✅ Frontend copied to server/public!
+echo.
+
+REM Step 3: Install Backend Dependencies
+echo 📦 Step 3/4: Installing backend dependencies...
 cd ..\server
 call npm install
 if errorlevel 1 (
@@ -30,8 +40,8 @@ if errorlevel 1 (
 echo ✅ Backend dependencies installed!
 echo.
 
-REM Step 3: Start Server
-echo 🚀 Step 3/3: Starting server...
+REM Step 4: Start Server
+echo 🚀 Step 4/4: Starting server...
 echo.
 echo ✅ Deployment complete!
 echo 🌐 Server will start on http://localhost:5000

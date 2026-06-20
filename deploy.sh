@@ -20,8 +20,18 @@ fi
 echo "✅ Frontend built successfully!"
 echo ""
 
-# Step 2: Install Backend Dependencies
-echo "📦 Step 2/3: Installing backend dependencies..."
+# Step 2: Copy build into server/public
+echo "📦 Step 2/4: Copying frontend into server/public..."
+node ../scripts/copy-client-build.js
+if [ $? -ne 0 ]; then
+    echo "❌ Failed to copy frontend build!"
+    exit 1
+fi
+echo "✅ Frontend copied to server/public!"
+echo ""
+
+# Step 3: Install Backend Dependencies
+echo "📦 Step 3/4: Installing backend dependencies..."
 cd ../server
 npm install
 if [ $? -ne 0 ]; then
@@ -31,8 +41,8 @@ fi
 echo "✅ Backend dependencies installed!"
 echo ""
 
-# Step 3: Start Server
-echo "🚀 Step 3/3: Starting server..."
+# Step 4: Start Server
+echo "🚀 Step 4/4: Starting server..."
 echo ""
 echo "✅ Deployment complete!"
 echo "🌐 Server will start on http://localhost:5000"
